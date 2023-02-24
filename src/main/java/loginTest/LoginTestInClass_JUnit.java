@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class LoginTestInClass_JUnit {
 	WebDriver driver;
 	//runs as JUnit Test and not as Java application
-	@BeforeClass
+	@BeforeClass//@BeforeClass and @AfterClass methods should be static
 	public static void beforeClass() {// Methods with @BeforeClass and @AfterClass annotations have to be static
 		System.out.println("beforeClass");
 	}
@@ -27,7 +27,7 @@ public class LoginTestInClass_JUnit {
 	@Before//runs before each @Test
 	public  void init() {//initial steps for launching browser and going to url
 		System.out.println("Init method-->@Before");
-		System.setProperty("webdriver.chrome.driver", "/Users/comet/SeleniumWorkspace/crmInClass/driver/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver");
 		driver=new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
